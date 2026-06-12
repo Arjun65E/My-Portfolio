@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun Shah — Portfolio</title>
+<link rel="icon" type="image/png" href="weblogo.jpeg">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;}
+body{background:#f0f4f8;color:#2d3748;line-height:1.6;padding:20px;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.container{max-width:1100px;margin:0 auto;background:#fff;padding:40px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.05);animation:fadeInUp .8s ease-out;}
+
+/* NAV */
+nav{display:flex;gap:12px;justify-content:flex-end;margin-bottom:10px;flex-wrap:wrap;}
+nav a{font-size:.85rem;font-weight:600;color:#0077b5;text-decoration:none;padding:6px 16px;border:1.5px solid #0077b5;border-radius:20px;transition:all .2s;}
+nav a:hover,nav a.active{background:#0077b5;color:#fff;}
+
+/* HEADER — original style */
+header{text-align:center;margin-bottom:40px;}
+header h2{color:#1a202c;font-size:1.3rem;font-weight:500;margin-bottom:4px;border:none;padding:0;}
+h1{color:#0077b5;font-size:2.5rem;margin-bottom:8px;}
+.subtitle{font-size:1.2rem;color:#718096;margin-bottom:20px;font-weight:500;}
+.btn{display:inline-block;background:#0077b5;color:#fff;padding:12px 24px;text-decoration:none;border-radius:30px;font-weight:bold;transition:all .3s ease;box-shadow:0 4px 10px rgba(0,119,181,.2);}
+.btn:hover{background:#005582;transform:translateY(-2px);box-shadow:0 6px 15px rgba(0,119,181,.3);}
+
+/* SECTIONS */
+section{margin-bottom:50px;}
+h2{color:#1a202c;margin-bottom:25px;border-left:5px solid #0077b5;padding-left:12px;font-size:1.75rem;}
+
+/* ABOUT — original style */
+.about-name-row{display:flex;align-items:center;gap:24px;margin-bottom:24px;}
+.about-avatar{width:80px;height:80px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:#0077b5;flex-shrink:0;border:3px solid #0077b5;}
+.about-name{font-size:1.5rem;font-weight:700;color:#1a202c;}
+.about-sub{color:#718096;font-size:.95rem;margin-top:4px;}
+
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr;}}
+.info-tile{background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;}
+.info-tile .ico{font-size:1.2rem;}
+.info-tile .lbl{font-size:.75rem;color:#a0aec0;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;}
+.info-tile .val{font-size:.92rem;color:#2d3748;font-weight:500;}
+.hobby-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.hobby-tag{background:#ebf8ff;color:#2b6cb0;border:1px solid #bee3f8;padding:4px 12px;border-radius:20px;font-size:.82rem;font-weight:500;}
+.bio-box{background:#f0fff4;border-left:4px solid #38a169;border-radius:0 8px 8px 0;padding:14px 16px;font-size:.92rem;color:#276749;line-height:1.6;}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:600px){.proj-grid{grid-template-columns:1fr;}}
+.proj-card{border:1.5px solid #e2e8f0;border-radius:12px;padding:22px;transition:all .25s;}
+.proj-card:hover{border-color:#90cdf4;box-shadow:0 6px 16px rgba(0,0,0,.07);transform:translateY(-3px);}
+.proj-tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+.proj-card h3{font-size:1.1rem;color:#1a202c;margin-bottom:6px;}
+.proj-card p{font-size:.88rem;color:#718096;line-height:1.5;}
+.proj-card .date{font-size:.78rem;color:#a0aec0;margin-top:10px;font-weight:600;}
+
+/* INTERNSHIP HIGHLIGHT */
+.intern-highlight{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,#ebf8ff 0%,#dbeafe 100%);border:1.5px solid #90cdf4;border-radius:14px;padding:24px 28px;text-decoration:none;color:inherit;transition:all .3s;margin-top:8px;}
+.intern-highlight:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,119,181,.15);}
+.intern-badge{background:#0077b5;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:4px 12px;border-radius:20px;margin-bottom:8px;display:inline-block;}
+.intern-highlight h3{font-size:1.25rem;font-weight:700;color:#1a202c;margin-bottom:4px;}
+.intern-highlight p{font-size:.9rem;color:#4a5568;}
+.arrow{font-size:1.6rem;color:#0077b5;flex-shrink:0;}
+
+/* FOOTER */
+.footer-strip{margin-top:60px;border-top:1px solid #e2e8f0;padding-top:28px;text-align:center;}
+.footer-strip span{font-size:.9rem;color:#718096;font-weight:500;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- TOP NAV -->
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="internships.html">Internships</a>
+  </nav>
+
+  <!-- HEADER — original -->
+  <header>
+    <h2>Hi, I'm</h2>
+    <h1>Arjun Shah</h1>
+    <p class="subtitle">Final year Computer Engineering Student</p>
+    <a href="https://www.linkedin.com/in/arjunshah2005" target="_blank" class="btn">Connect on LinkedIn</a>
+  </header>
+
+  <!-- ABOUT ME — original layout -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-name-row">
+      <div class="about-avatar">AS</div>
+      <div>
+        <div class="about-name">Arjun Shah</div>
+        <div class="about-sub">B.Tech Computer Engineering · Sarvajanik College of Eng &amp; Technology (SCET), Surat</div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-tile"><span class="ico">🎂</span><div><div class="lbl">Age</div><div class="val">21 years</div></div></div>
+      <div class="info-tile"><span class="ico">✉️</span><div><div class="lbl">Email</div><div class="val">x@email.com</div></div></div>
+      <div class="info-tile"><span class="ico">🏫</span><div><div class="lbl">University</div><div class="val">Sarvajanik College of Engineering &amp; Technology (SCET)</div></div></div>
+      <div class="info-tile"><span class="ico">📍</span><div><div class="lbl">Location</div><div class="val">Surat, Gujarat, India</div></div></div>
+      <div class="info-tile" style="grid-column:1/-1"><span class="ico">🎓</span><div><div class="lbl">Degree</div><div class="val">B.Tech in Computer Engineering (Sem VII)</div></div></div>
+    </div>
+
+    <div class="info-tile" style="margin-bottom:14px;">
+      <span class="ico">🎮</span>
+      <div>
+        <div class="lbl">Hobbies &amp; Interests</div>
+        <div class="hobby-tags">
+          <span class="hobby-tag">Data Science</span>
+          <span class="hobby-tag">Cloud Architecture</span>
+          <span class="hobby-tag">Business Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-box">I'm an adaptive Computer Engineering student passionate about AI/ML and Cloud Architecture. I prefer leveraging serverless technologies and platform capabilities over deep background coding.</div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <span class="proj-tag" style="background:#fef3c7;color:#92400e;">AI / ML</span>
+        <h3>Building an Offline AI Chatbot</h3>
+        <p>A fully local LLM-powered chatbot that runs without internet connectivity, using open-source models and a custom RAG pipeline.</p>
+        <div class="date">June 2026 · AM/NS India Internship</div>
+      </div>
+      <div class="proj-card" style="border-color:#c6f6d5;">
+        <span class="proj-tag" style="background:#c6f6d5;color:#276749;">Cloud</span>
+        <h3>AWS Microservices Portfolio</h3>
+        <p>Deep-dive study and documentation of 13 AWS cloud services — Lambda, DynamoDB, S3, Bedrock, Amplify and more.</p>
+        <div class="date">June 2026 · AM/NS India Internship</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS — highlighted clickable section -->
+  <section id="internships">
+    <h2>Internships</h2>
+    <a href="internships.html" class="intern-highlight">
+      <div>
+        <span class="intern-badge">✨ Featured</span>
+        <h3>ArcelorMittal Nippon Steel (AM/NS India)</h3>
+        <p>Information Technology Intern · Hazira, Surat &nbsp;|&nbsp; June 1 – June 30, 2026</p>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+  </section>
+
+  <div class="footer-strip">
+    <span>Designed &amp; Built in <strong style="color:blue;">India</strong> &nbsp;🇮🇳</span>
+  </div>
+
+</div>
+</body>
+</html>

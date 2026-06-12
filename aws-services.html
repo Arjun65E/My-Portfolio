@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Cloud Services — Arjun Shah</title>
+<link rel="icon" type="image/png" href="weblogo.jpeg">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;}
+body{background:#f0f4f8;color:#2d3748;line-height:1.6;padding:20px;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.container{max-width:1100px;margin:0 auto;background:#fff;padding:40px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);animation:fadeInUp .7s ease-out;}
+nav{display:flex;gap:12px;justify-content:flex-end;margin-bottom:30px;flex-wrap:wrap;}
+nav a{font-size:.85rem;font-weight:600;color:#0077b5;text-decoration:none;padding:6px 16px;border:1.5px solid #0077b5;border-radius:20px;transition:all .2s;}
+nav a:hover,nav a.active{background:#0077b5;color:#fff;}
+.breadcrumb{font-size:.82rem;color:#a0aec0;margin-bottom:10px;}
+.breadcrumb a{color:#0077b5;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.page-hero{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1.5px solid #fde68a;border-radius:14px;padding:28px 32px;margin-bottom:36px;}
+.page-hero h1{font-size:1.8rem;font-weight:800;color:#1a202c;margin-bottom:6px;}
+.page-hero p{font-size:.95rem;color:#4a5568;}
+h2{color:#1a202c;margin-bottom:22px;border-left:5px solid #0077b5;padding-left:12px;font-size:1.5rem;}
+/* SERVICE CARDS */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:48px;}
+@media(max-width:680px){.grid{grid-template-columns:1fr;}}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,.03);transition:all .25s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,.08);border-color:#cbd5e0;}
+.card-header{display:flex;align-items:center;margin-bottom:14px;border-bottom:1px solid #edf2f7;padding-bottom:12px;}
+.aws-icon{width:42px;height:42px;object-fit:contain;margin-right:14px;}
+.card h3{color:#2d3748;font-size:1.15rem;font-weight:700;}
+.analogy-box{background:#fffaf0;border:1px dashed #feebc8;padding:9px 14px;border-radius:6px;margin-bottom:13px;font-style:italic;color:#dd6b20;font-size:.9rem;}
+.item{margin-bottom:9px;font-size:.9rem;line-height:1.5;}
+.label{font-weight:700;color:#4a5568;margin-right:5px;}
+/* DELIVERABLES */
+.deliverable-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:640px){.deliverable-grid{grid-template-columns:1fr;}}
+.deliverable-card{border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:all .25s;}
+.deliverable-card:hover{transform:translateY(-3px);}
+.deliverable-card.ppt{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;}
+.deliverable-card.report{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;}
+.d-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+.ppt .d-icon{background:#fef3c7;} .report .d-icon{background:#dbeafe;}
+.d-type{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;}
+.ppt .d-type{color:#92400e;} .report .d-type{color:#1e40af;}
+.d-title{font-size:1.05rem;font-weight:700;color:#1a202c;line-height:1.3;}
+.d-desc{font-size:.85rem;color:#718096;line-height:1.5;}
+.d-meta{display:flex;flex-wrap:wrap;gap:7px;}
+.meta-tag{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:20px;}
+.ppt .meta-tag{background:#fde68a;color:#78350f;} .report .meta-tag{background:#bfdbfe;color:#1e3a8a;}
+.dl-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:25px;font-size:.85rem;font-weight:700;text-decoration:none;transition:all .2s;align-self:flex-start;margin-top:4px;}
+.ppt .dl-btn{background:#d97706;color:#fff;box-shadow:0 3px 10px rgba(217,119,6,.25);}
+.ppt .dl-btn:hover{background:#b45309;transform:translateY(-1px);}
+.report .dl-btn{background:#2563eb;color:#fff;box-shadow:0 3px 10px rgba(37,99,235,.25);}
+.report .dl-btn:hover{background:#1d4ed8;transform:translateY(-1px);}
+.footer-strip{margin-top:50px;border-top:1px solid #e2e8f0;padding-top:24px;text-align:center;font-size:.88rem;color:#718096;}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="internships.html">Internships</a>
+    <a href="amns.html">AM/NS</a>
+  </nav>
+
+  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="internships.html">Internships</a> › <a href="amns.html">AM/NS</a> › AWS Services</div>
+
+  <div class="page-hero">
+    <h1>☁️ AWS Cloud Services</h1>
+    <p>Core Learning at AM/NS India · 13 AWS microservice components explored with analogies, architecture context, and real-world use cases.</p>
+  </div>
+
+  <h2>Services Covered</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-header"><img src="aws-ec2.png" class="aws-icon" alt="EC2"><h3>Amazon EC2</h3></div>
+      <div class="analogy-box">💡 Renting a flat instead of buying a house — you control everything inside, AWS owns the building.</div>
+      <div class="item"><span class="label">What it is:</span> Virtual servers in the cloud with full control over OS, software, and config.</div>
+      <div class="item"><span class="label">Why it helps:</span> Eliminates upfront physical server costs — scale up at peak, scale down when quiet.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS runs backend applications on EC2 — always on, accessible to all employees.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-lambda.jpeg" class="aws-icon" alt="Lambda"><h3>AWS Lambda</h3></div>
+      <div class="analogy-box">💡 A smart sensor light — off and $0 cost until triggered, runs for a moment, then shuts down automatically.</div>
+      <div class="item"><span class="label">What it is:</span> Serverless compute — runs code without provisioning any server.</div>
+      <div class="item"><span class="label">Why it helps:</span> Zero cost when idle. Auto-scales from 1 to millions of requests with no configuration.</div>
+      <div class="item"><span class="label">Real Life:</span> Instagram uses Lambda-style processing to resize photos the millisecond a user uploads them.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-s3.png" class="aws-icon" alt="S3"><h3>Amazon S3</h3></div>
+      <div class="analogy-box">💡 An infinite safety vault that never fills up — store millions of files and retrieve any one instantly from anywhere.</div>
+      <div class="item"><span class="label">What it is:</span> Infinite object storage for any file type — images, PDFs, videos, logs, backups.</div>
+      <div class="item"><span class="label">Why it helps:</span> Files replicated across multiple data centers — 99.999999999% durability guaranteed.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS stores equipment manuals, safety documents, and scanned invoices in S3.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-dynamodb.png" class="aws-icon" alt="DynamoDB"><h3>Amazon DynamoDB</h3></div>
+      <div class="analogy-box">💡 A super-speed address book that finds one record out of 10 billion rows in under a millisecond — at any scale.</div>
+      <div class="item"><span class="label">What it is:</span> Fully managed NoSQL database with single-digit millisecond response times.</div>
+      <div class="item"><span class="label">Why it helps:</span> Handles millions of reads/writes per second — scales automatically with no config.</div>
+      <div class="item"><span class="label">Real Life:</span> Netflix uses DynamoDB to load watchlists for 200 million+ users simultaneously.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-apigateway.jpeg" class="aws-icon" alt="API Gateway"><h3>Amazon API Gateway</h3></div>
+      <div class="analogy-box">💡 A security check desk at a corporate entrance — every visitor is verified before being directed to the right department.</div>
+      <div class="item"><span class="label">What it is:</span> Managed front door for all backend APIs — handles routing, auth, and rate limiting.</div>
+      <div class="item"><span class="label">Why it helps:</span> Hides and protects backend services from direct internet exposure.</div>
+      <div class="item"><span class="label">Real Life:</span> All employee app requests at AM/NS pass through API Gateway before reaching Lambda or DynamoDB.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-iam.png" class="aws-icon" alt="IAM"><h3>AWS IAM</h3></div>
+      <div class="analogy-box">💡 An office keycard system — each employee can only enter the rooms they need. No master key, no over-access.</div>
+      <div class="item"><span class="label">What it is:</span> Identity and access management — controls who can do what on which AWS resources.</div>
+      <div class="item"><span class="label">Why it helps:</span> Principle of least privilege — minimum access only, reducing breach risk dramatically.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS HR app accesses only HR data. Production app accesses only production data.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-cloudwatch.png" class="aws-icon" alt="CloudWatch"><h3>Amazon CloudWatch</h3></div>
+      <div class="analogy-box">💡 A car dashboard — shows engine speed, temperature, and fuel in real time, and warns you before something breaks.</div>
+      <div class="item"><span class="label">What it is:</span> Monitoring service collecting logs, metrics, and alarms from all AWS services.</div>
+      <div class="item"><span class="label">Why it helps:</span> Alerts engineers automatically before end users even notice a problem.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS production systems monitored 24/7 — failures trigger immediate SMS alerts.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-eventbridge.jpeg" class="aws-icon" alt="EventBridge"><h3>Amazon EventBridge</h3></div>
+      <div class="analogy-box">💡 Smart home automation — IF motion detected THEN turn on lights and start camera. Automatic, instant, no polling.</div>
+      <div class="item"><span class="label">What it is:</span> Serverless event bus connecting AWS services using IF-THEN event-driven triggers.</div>
+      <div class="item"><span class="label">Why it helps:</span> Services react only when something happens — no wasted compute constantly checking for updates.</div>
+      <div class="item"><span class="label">Real Life:</span> Document approved at AM/NS → EventBridge notifies manager + archives to S3 + updates DynamoDB.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-bedrock.jpeg" class="aws-icon" alt="Bedrock"><h3>Amazon Bedrock</h3></div>
+      <div class="analogy-box">💡 A menu of AI chefs — access Claude, Llama, Titan and more through one API without training any model yourself.</div>
+      <div class="item"><span class="label">What it is:</span> Managed AI service giving access to multiple foundation models through a single API.</div>
+      <div class="item"><span class="label">Why it helps:</span> No model training needed — plug in and build AI features in minutes.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS internal chatbot answers employee questions about safety procedures using company documents.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-amplify.png" class="aws-icon" alt="Amplify"><h3>AWS Amplify</h3></div>
+      <div class="analogy-box">💡 A ready-made construction kit — walls, wiring, and plumbing pre-built so you just assemble instead of building from scratch.</div>
+      <div class="item"><span class="label">What it is:</span> Full-stack development platform — sets up auth, storage, APIs, and hosting automatically.</div>
+      <div class="item"><span class="label">Why it helps:</span> Frontend developers can build complete cloud-connected apps without configuring each service manually.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS employee portals with login, document access, and dashboards built via Amplify.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-textract.jpeg" class="aws-icon" alt="Textract"><h3>Amazon Textract</h3></div>
+      <div class="analogy-box">💡 A scanner that doesn't just photograph a document — it reads it, understands the structure, and extracts every field as usable data.</div>
+      <div class="item"><span class="label">What it is:</span> AI service that automatically extracts text, tables, and form fields from scanned documents.</div>
+      <div class="item"><span class="label">Why it helps:</span> Eliminates manual data entry from paper invoices, forms, and scanned PDFs entirely.</div>
+      <div class="item"><span class="label">Real Life:</span> Supplier invoices at AM/NS scanned → Textract extracts all fields → feeds into ERP system.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-secretsmanager.jpeg" class="aws-icon" alt="Secrets Manager"><h3>AWS Secrets Manager</h3></div>
+      <div class="analogy-box">💡 A bank vault for passwords — only authorised apps can retrieve specific secrets, every access is logged, contents rotate automatically.</div>
+      <div class="item"><span class="label">What it is:</span> Secure storage for passwords, API keys, and credentials — retrieved at runtime, never hardcoded.</div>
+      <div class="item"><span class="label">Why it helps:</span> Automatic rotation — passwords change periodically without any code changes or downtime.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS database passwords never written in any code — Lambda fetches them securely at runtime.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><img src="aws-lex.png" class="aws-icon" alt="Lex"><h3>Amazon Lex</h3></div>
+      <div class="analogy-box">💡 The brain behind Alexa — embedded directly into your own app to understand and respond to what users say or type.</div>
+      <div class="item"><span class="label">What it is:</span> Conversational AI service for building chatbots and voice assistants using natural language.</div>
+      <div class="item"><span class="label">Why it helps:</span> Users type in plain language — Lex understands the intent and triggers the right action.</div>
+      <div class="item"><span class="label">Real Life:</span> AM/NS HR chatbot — employees ask "How many leaves do I have?" and get instant answers without calling HR.</div>
+    </div>
+
+  </div>
+
+  <!-- DELIVERABLES -->
+  <h2>📁 Internship Learning Deliverables</h2>
+  <div class="deliverable-grid">
+    <div class="deliverable-card ppt">
+      <div class="d-icon">📊</div>
+      <div>
+        <div class="d-type">Presentation · PDF</div>
+        <div class="d-title">Introduction to AWS Cloud Services</div>
+      </div>
+      <div class="d-desc">A 22-slide presentation covering all 13 AWS services used at AM/NS India — with simple analogies, real-world examples, workflow diagrams, and key takeaways.</div>
+      <div class="d-meta">
+        <span class="meta-tag">22 Slides</span>
+        <span class="meta-tag">13 Services</span>
+        <span class="meta-tag">June 2026</span>
+      </div>
+      <a href="Arjun_AWS_Introduction.pdf" download class="dl-btn">⬇ Download PPT</a>
+    </div>
+    <div class="deliverable-card report">
+      <div class="d-icon">📄</div>
+      <div>
+        <div class="d-type">Report · PDF / DOCX</div>
+        <div class="d-title">AWS Cloud Services — Internship Report</div>
+      </div>
+      <div class="d-desc">A detailed 12-page internship learning report covering AWS fundamentals, global infrastructure, all 13 core services, architecture overview, and key learnings.</div>
+      <div class="d-meta">
+        <span class="meta-tag">12 Pages</span>
+        <span class="meta-tag">Detailed</span>
+        <span class="meta-tag">June 2026</span>
+      </div>
+      <a href="AWS_Introduction_Report_Arjun_Shah.docx" download class="dl-btn">⬇ Download Report</a>
+    </div>
+  </div>
+
+  <div class="footer-strip">Designed &amp; Built in <strong style="color:#0077b5;">India</strong> &nbsp;🇮🇳</div>
+</div>
+</body>
+</html>

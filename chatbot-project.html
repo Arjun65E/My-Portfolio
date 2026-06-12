@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline AI Chatbot — Arjun Shah</title>
+<link rel="icon" type="image/png" href="weblogo.jpeg">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;}
+body{background:#f0f4f8;color:#2d3748;line-height:1.6;padding:20px;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.container{max-width:1000px;margin:0 auto;background:#fff;padding:40px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.06);animation:fadeInUp .7s ease-out;}
+nav{display:flex;gap:12px;justify-content:flex-end;margin-bottom:30px;flex-wrap:wrap;}
+nav a{font-size:.85rem;font-weight:600;color:#0077b5;text-decoration:none;padding:6px 16px;border:1.5px solid #0077b5;border-radius:20px;transition:all .2s;}
+nav a:hover,nav a.active{background:#0077b5;color:#fff;}
+.breadcrumb{font-size:.82rem;color:#a0aec0;margin-bottom:10px;}
+.breadcrumb a{color:#0077b5;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+/* HERO */
+.hero{background:linear-gradient(135deg,#f0fff4 0%,#c6f6d5 100%);border:1.5px solid #9ae6b4;border-radius:14px;padding:32px 36px;margin-bottom:36px;}
+.hero h1{font-size:1.85rem;font-weight:800;color:#1a202c;margin-bottom:8px;}
+.hero p{font-size:.95rem;color:#276749;margin-bottom:16px;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{background:rgba(56,161,105,.15);border:1px solid #9ae6b4;border-radius:20px;padding:5px 14px;font-size:.8rem;font-weight:600;color:#276749;}
+/* SECTIONS */
+h2{color:#1a202c;margin-bottom:18px;border-left:5px solid #38a169;padding-left:12px;font-size:1.4rem;margin-top:36px;}
+/* OVERVIEW GRID */
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px;}
+@media(max-width:600px){.overview-grid{grid-template-columns:1fr;}}
+.ov-tile{background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;}
+.ov-tile .lbl{font-size:.72rem;color:#a0aec0;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+.ov-tile .val{font-size:.92rem;color:#2d3748;font-weight:500;line-height:1.4;}
+/* PIPELINE */
+.pipeline{display:flex;flex-direction:column;gap:0;margin-bottom:8px;}
+.pipe-step{display:flex;gap:16px;align-items:flex-start;padding:18px 0;}
+.pipe-step:not(:last-child){border-bottom:1px solid #edf2f7;}
+.pipe-num{width:36px;height:36px;border-radius:50%;background:#38a169;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;margin-top:2px;}
+.pipe-content h4{font-size:1rem;font-weight:700;color:#1a202c;margin-bottom:4px;}
+.pipe-content p{font-size:.88rem;color:#4a5568;line-height:1.55;}
+.pipe-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.pipe-tag{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:20px;background:#c6f6d5;color:#1a4731;}
+/* NOTES AREA */
+.notes-area{background:#f7fafc;border:1.5px dashed #cbd5e0;border-radius:12px;padding:28px 30px;text-align:center;color:#a0aec0;}
+.notes-area .ico{font-size:2.5rem;margin-bottom:12px;}
+.notes-area p{font-size:.92rem;line-height:1.6;}
+/* FULL NOTES — will be filled in */
+#full-notes{display:none;}
+.prose{font-size:.92rem;color:#2d3748;line-height:1.75;}
+.prose h3{font-size:1.1rem;font-weight:700;color:#1a202c;margin:20px 0 8px;}
+.prose p{margin-bottom:12px;}
+.prose ul{margin:8px 0 12px 20px;}
+.prose li{margin-bottom:5px;}
+.prose code{background:#edf2f7;border-radius:4px;padding:2px 7px;font-family:monospace;font-size:.88rem;color:#2d3748;}
+.prose pre{background:#1a202c;color:#e2e8f0;border-radius:10px;padding:18px 20px;overflow-x:auto;font-family:monospace;font-size:.85rem;line-height:1.6;margin:12px 0;}
+/* FOOTER */
+.footer-strip{margin-top:50px;border-top:1px solid #e2e8f0;padding-top:24px;text-align:center;font-size:.88rem;color:#718096;}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="internships.html">Internships</a>
+    <a href="amns.html">AM/NS</a>
+  </nav>
+
+  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="internships.html">Internships</a> › <a href="amns.html">AM/NS</a> › Offline AI Chatbot</div>
+
+  <div class="hero">
+    <h1>🤖 Building an Offline AI Chatbot</h1>
+    <p>AM/NS India Internship Project · June 2026 — A fully local LLM-powered chatbot with no internet dependency.</p>
+    <div class="hero-chips">
+      <span class="chip">Local LLM</span>
+      <span class="chip">Offline / Air-gapped</span>
+      <span class="chip">Python</span>
+      <span class="chip">AM/NS India</span>
+      <span class="chip">June 2026</span>
+    </div>
+  </div>
+
+  <!-- PROJECT OVERVIEW -->
+  <h2>Project Overview</h2>
+  <div class="overview-grid">
+    <div class="ov-tile"><div class="lbl">Goal</div><div class="val">Deploy a chatbot that answers employee queries using company documents, with zero internet connectivity required.</div></div>
+    <div class="ov-tile"><div class="lbl">Environment</div><div class="val">AM/NS India internal network · Air-gapped / offline constraint</div></div>
+    <div class="ov-tile"><div class="lbl">Core Tech</div><div class="val">Local LLM · Vector DB · Document embeddings · RAG pipeline</div></div>
+    <div class="ov-tile"><div class="lbl">Outcome</div><div class="val">Working prototype serving safety procedure Q&amp;A from company PDFs — fully offline.</div></div>
+  </div>
+
+  <!-- PIPELINE -->
+  <h2>Project Pipeline</h2>
+  <div class="pipeline">
+    <div class="pipe-step">
+      <div class="pipe-num">1</div>
+      <div class="pipe-content">
+        <h4>Document Ingestion</h4>
+        <p>Load company documents (PDFs, Word files) from a local directory. Parse and clean raw text content.</p>
+        <div class="pipe-tags"><span class="pipe-tag">PDF parsing</span><span class="pipe-tag">Text extraction</span></div>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">2</div>
+      <div class="pipe-content">
+        <h4>Chunking &amp; Embedding</h4>
+        <p>Split documents into overlapping text chunks. Generate vector embeddings locally using a sentence transformer model.</p>
+        <div class="pipe-tags"><span class="pipe-tag">Chunking</span><span class="pipe-tag">Sentence Transformers</span><span class="pipe-tag">Embeddings</span></div>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">3</div>
+      <div class="pipe-content">
+        <h4>Vector Store</h4>
+        <p>Store all embeddings in a local vector database (FAISS or Chroma) for fast semantic similarity search.</p>
+        <div class="pipe-tags"><span class="pipe-tag">FAISS / Chroma</span><span class="pipe-tag">Vector DB</span><span class="pipe-tag">Similarity Search</span></div>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">4</div>
+      <div class="pipe-content">
+        <h4>Query &amp; Retrieval (RAG)</h4>
+        <p>User query is embedded → nearest document chunks retrieved from vector store → passed as context to the LLM.</p>
+        <div class="pipe-tags"><span class="pipe-tag">RAG</span><span class="pipe-tag">Retrieval</span><span class="pipe-tag">Context injection</span></div>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">5</div>
+      <div class="pipe-content">
+        <h4>Local LLM Inference</h4>
+        <p>A quantized open-source LLM (e.g. LLaMA / Mistral via Ollama) generates the final answer using retrieved context — entirely on-device.</p>
+        <div class="pipe-tags"><span class="pipe-tag">Ollama</span><span class="pipe-tag">LLaMA / Mistral</span><span class="pipe-tag">GGUF quantization</span></div>
+      </div>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-num">6</div>
+      <div class="pipe-content">
+        <h4>Chat Interface</h4>
+        <p>Simple web UI (or CLI) where employees can ask questions and receive grounded answers with source references.</p>
+        <div class="pipe-tags"><span class="pipe-tag">Gradio / Streamlit</span><span class="pipe-tag">CLI</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL NOTES PLACEHOLDER -->
+  <h2>Full Project Notes</h2>
+  <div class="notes-area" id="notes-placeholder">
+    <div class="ico">📝</div>
+    <p><strong>Notes coming soon.</strong><br>Detailed build notes, code snippets, architecture diagrams, and observations will be added here.</p>
+  </div>
+
+  <!-- ── PASTE YOUR NOTES BELOW THIS LINE ── -->
+  <div id="full-notes" class="prose">
+    <!-- Notes will go here -->
+  </div>
+
+  <div class="footer-strip">Designed &amp; Built in <strong style="color:#0077b5;">India</strong> &nbsp;🇮🇳</div>
+</div>
+</body>
+</html>
